@@ -1,13 +1,21 @@
 [project]
-name = "notebooks-template"
+name = "phd-thesis-fitting"
 version = "0.1.0"
-description = "Add your description here"
+description = "Notebooks for fitting the wear coefficient from measurements."
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
     "jupyter",
     "jupytext",
-    # more dependencies here
+    'pyroll-core',
+    "pyroll-ring-model-thermal",
+    "pyroll-freiberg-flow-stress",
+    "pyroll-hensel-force-torque",
+    "pyroll-pillar-model",
+    "pyroll-pillar-model-archard",
+    "pyroll-lendl-equivalent-method",
+    "pyroll-neutral-point-estimator",
+    "pyroll-sparling-spreading",
 ]
 
 [dependency-groups]
