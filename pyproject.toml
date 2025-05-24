@@ -3,11 +3,12 @@ name = "phd-thesis-fitting"
 version = "0.1.0"
 description = "Notebooks for fitting the wear coefficient from measurements."
 readme = "README.md"
-requires-python = ">=3.10"
+requires-python = ">=3.11"
 dependencies = [
     "jupyter",
     "jupytext",
     'pyroll-core',
+    "pyroll-report",
     "pyroll-ring-model-thermal",
     "pyroll-freiberg-flow-stress",
     "pyroll-hensel-force-torque",
@@ -16,6 +17,9 @@ dependencies = [
     "pyroll-lendl-equivalent-method",
     "pyroll-neutral-point-estimator",
     "pyroll-sparling-spreading",
+    "lmfit",
+    "pandas",
+    "matplotlib"
 ]
 
 [dependency-groups]
