@@ -42,6 +42,8 @@ def create_in_profile_from_surface_temperature(temperature: float) -> pr.Profile
         temperature=temperature,
         strain=0,
         flow_stress=100e6,
+        weight=2400,
+        length=12,
         material=["BST500", "steel"]
     )
     return in_profile
