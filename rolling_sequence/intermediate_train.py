@@ -1,7 +1,7 @@
 import pyroll.core as pr
 
 
-def intermediate_sequence(roll_surface_temperature: float = 50 + + 273.15, disk_element_count: int = 30):
+def intermediate_sequence(roll_surface_temperature: float = 50 + 273.15, disk_element_count: int = 30):
     ROLL_SURFACE_TEMPERATURE = roll_surface_temperature
     DISK_ELEMENT_COUNT = disk_element_count
 
