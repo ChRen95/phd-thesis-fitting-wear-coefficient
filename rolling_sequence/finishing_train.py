@@ -189,7 +189,7 @@ def finishing_sequence_e112(roll_surface_temperature: float = 50 + 273.15, disk_
             length=0.85
         ),
         pr.RollPass(
-            label="24-V-E11_2",
+            label="24-V",
             orientation="v",
             roll=pr.Roll(
                 groove=pr.FalseRoundGroove(
@@ -504,7 +504,7 @@ def finishing_sequence_e107(roll_surface_temperature: float = 50 + 273.15, disk_
             length=0.85
         ),
         pr.RollPass(
-            label="24-V-E10_7",
+            label="24-V",
             orientation="v",
             roll=pr.Roll(
                 groove=pr.FalseRoundGroove(
