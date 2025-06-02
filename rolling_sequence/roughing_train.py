@@ -73,7 +73,7 @@ def roughing_sequence(roll_surface_temperature: float = 50 + 273.15, disk_elemen
              ),
              velocity=0.55,
              gap=15e-3,
-             sparling_material_coefficient=0.9,
+             sparling_material_coefficient=0.8,
              disk_element_count=DISK_ELEMENT_COUNT
          ),
          pr.Transport(
@@ -120,7 +120,7 @@ def roughing_sequence(roll_surface_temperature: float = 50 + 273.15, disk_elemen
              ),
              velocity=0.994,
              gap=15e-3,
-             sparling_material_coefficient=1,
+             sparling_material_coefficient=0.9,
              disk_element_count=DISK_ELEMENT_COUNT
          ),
          pr.Transport(

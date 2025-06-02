@@ -1,3 +1,3 @@
 from .roughing_train import roughing_sequence
 from .intermediate_train import intermediate_sequence
-from .finishing_train import finishing_sequence
+from .finishing_train import finishing_sequence_e112, finishing_sequence_e107
