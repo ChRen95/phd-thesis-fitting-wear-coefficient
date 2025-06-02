@@ -7,11 +7,11 @@ def finishing_sequence(roll_surface_temperature: float = 50 + + 273.15, disk_ele
 
     return pr.PassSequence([
         pr.RollPass(
-            label="17",
+            label="17-H",
             orientation="h",
             roll=pr.Roll(
                 groove=pr.CircularOvalGroove(
-                    depth=5.7e-3,
+                    depth=7.4e-3,
                     r1=1e-3,
                     r2=23e-3,
                 ),
@@ -19,7 +19,7 @@ def finishing_sequence(roll_surface_temperature: float = 50 + + 273.15, disk_ele
                 temperature=ROLL_SURFACE_TEMPERATURE
             ),
             velocity=17.1,
-            gap=3.8e-3,
+            gap=2.3e-3,
             sparling_material_coefficient=0.9,
             disk_element_count=DISK_ELEMENT_COUNT
         ),
@@ -28,20 +28,20 @@ def finishing_sequence(roll_surface_temperature: float = 50 + + 273.15, disk_ele
             length=0.85
         ),
         pr.RollPass(
-            label="18",
+            label="18-V",
             orientation="v",
             roll=pr.Roll(
                 groove=pr.FalseRoundGroove(
                     depth=8.7e-3,
                     r1=0.2e-3,
-                    r2=8.5e-3,
+                    r2=10.3e-3,
                     flank_angle=60
                 ),
                 nominal_radius=104e-3,
                 temperature=ROLL_SURFACE_TEMPERATURE
             ),
             velocity=22.2,
-            gap=2.8e-3,
+            gap=2.6e-3,
             sparling_material_coefficient=0.9,
             disk_element_count=DISK_ELEMENT_COUNT
         ),
@@ -125,7 +125,7 @@ def finishing_sequence(roll_surface_temperature: float = 50 + + 273.15, disk_ele
             length=12.4,
         ),
         pr.RollPass(
-            label="21",
+            label="21-H",
             orientation="h",
             roll=pr.Roll(
                 groove=pr.CircularOvalGroove(
@@ -146,7 +146,7 @@ def finishing_sequence(roll_surface_temperature: float = 50 + + 273.15, disk_ele
             length=0.85
         ),
         pr.RollPass(
-            label="22",
+            label="22-V",
             orientation="v",
             roll=pr.Roll(
                 groove=pr.FalseRoundGroove(
@@ -159,8 +159,8 @@ def finishing_sequence(roll_surface_temperature: float = 50 + + 273.15, disk_ele
                 temperature=ROLL_SURFACE_TEMPERATURE
             ),
             velocity=37.8,
-            gap=1.2e-3,
-            sparling_material_coefficient=0.8,
+            gap=2.2e-3,
+            sparling_material_coefficient=0.9,
             disk_element_count=DISK_ELEMENT_COUNT
         ),
         pr.Transport(
@@ -168,7 +168,7 @@ def finishing_sequence(roll_surface_temperature: float = 50 + + 273.15, disk_ele
             length=0.85
         ),
         pr.RollPass(
-            label="23",
+            label="23-H",
             orientation="h",
             roll=pr.Roll(
                 groove=pr.CircularOvalGroove(
@@ -180,7 +180,7 @@ def finishing_sequence(roll_surface_temperature: float = 50 + + 273.15, disk_ele
                 temperature=ROLL_SURFACE_TEMPERATURE
             ),
             velocity=51,
-            gap=1.6e-3,
+            gap=1.9e-3,
             sparling_material_coefficient=0.9,
             disk_element_count=DISK_ELEMENT_COUNT
         ),
@@ -189,13 +189,13 @@ def finishing_sequence(roll_surface_temperature: float = 50 + + 273.15, disk_ele
             length=0.85
         ),
         pr.RollPass(
-            label="24",
+            label="24-V",
             orientation="v",
             roll=pr.Roll(
                 groove=pr.FalseRoundGroove(
-                    depth=4.6e-3,
+                    depth=4.85e-3,
                     r1=0.2e-3,
-                    r2=5.55e-3,
+                    r2=5.85e-3,
                     flank_angle=70
                 ),
                 nominal_radius=72.75e-3,
@@ -203,7 +203,7 @@ def finishing_sequence(roll_surface_temperature: float = 50 + + 273.15, disk_ele
             ),
             velocity=65.4,
             gap=1.7e-3,
-            sparling_material_coefficient=0.8,
+            sparling_material_coefficient=0.9,
             disk_element_count=DISK_ELEMENT_COUNT
         ),
         pr.Transport(
@@ -274,7 +274,7 @@ def finishing_sequence(roll_surface_temperature: float = 50 + + 273.15, disk_ele
             length=6.4,
         ),
         pr.RollPass(
-            label="27",
+            label="27-H",
             orientation="h",
             roll=pr.Roll(
                 groove=pr.CircularOvalGroove(
@@ -286,8 +286,8 @@ def finishing_sequence(roll_surface_temperature: float = 50 + + 273.15, disk_ele
                 temperature=ROLL_SURFACE_TEMPERATURE
             ),
             velocity=81.7,
-            gap=1.6e-3,
-            sparling_material_coefficient=0.8,
+            gap=1.7e-3,
+            sparling_material_coefficient=0.9,
             disk_element_count=DISK_ELEMENT_COUNT
         ),
         pr.Transport(
@@ -296,7 +296,7 @@ def finishing_sequence(roll_surface_temperature: float = 50 + + 273.15, disk_ele
         ),
 
         pr.RollPass(
-            label="28",
+            label="28-V",
             orientation="v",
             roll=pr.Roll(
                 groove=pr.FalseRoundGroove(
@@ -309,7 +309,7 @@ def finishing_sequence(roll_surface_temperature: float = 50 + + 273.15, disk_ele
                 temperature=ROLL_SURFACE_TEMPERATURE
             ),
             velocity=107,
-            gap=1.65e-3,
+            gap=1.7e-3,
             sparling_material_coefficient=0.9,
             disk_element_count=DISK_ELEMENT_COUNT
         )
