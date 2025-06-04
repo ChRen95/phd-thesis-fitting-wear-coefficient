@@ -38,7 +38,7 @@ def pillars_wear_length(roll: pr.RollPass.Roll) -> np.ndarray:
 
 def extract_wear_contours_from_measurement(groove_name):
     root_dir = Path.cwd()
-    wear_data_dir = root_dir / "wear_data"
+    wear_data_dir = root_dir / "wear_data" / groove_name
 
     labels = []
     tonnages = []
