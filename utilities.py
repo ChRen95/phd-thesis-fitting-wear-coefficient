@@ -101,6 +101,31 @@ def calculate_wear_contour(roll_pass: pr.RollPass, wear_coefficient: float, tonn
     return wear_contour
 
 
+def calculate_wear_contour_as_function(roll_pass: pr.RollPass, base_wear_coefficient: float, roll_gap_ratio_coefficient: float, tonnage: float):
+    vickers_hardness_c15c = 900
+
+    _pillars_wear_length = pillars_wear_length(roll_pass.roll)
+    _pillar_deformation_resistance = pillar_deformation_resistance(roll_pass)
+
+    def wear_coefficient(base_wear_coefficient: float, roll_gap_ratio_coefficent: float):
+        mean_cross_section = (roll_pass.in_profile.cross_section.area + 2 * roll_pass.out_profile.cross_section.area) / 3
+        roll_gap_ratio =  roll_pass.roll.contact_area / mean_cross_section
+
+        return base_wear_coefficient * roll_gap_ratio ** roll_gap_ratio_coefficent
+
+    pillar_wear_depths = wear_coefficient * _pillar_deformation_resistance * _pillars_wear_length / (
+            3 * vickers_hardness_c15c)
+    total_pillar_wear_depths = pillar_wear_depths * tonnage / roll_pass.in_profile.weight
+    wear_depths_with_groove_contour = roll_pass.roll.groove.local_depth(
+        roll_pass.out_profile.pillars) + total_pillar_wear_depths
+    right_side = list(zip(roll_pass.out_profile.pillars, wear_depths_with_groove_contour))
+    left_side = list(zip(-roll_pass.out_profile.pillars[::-1], wear_depths_with_groove_contour[::-1]))
+    combined_contour_list = left_side + right_side
+    wear_contour = LineString(combined_contour_list)
+
+    return wear_contour
+
+
 def compare_groove_contour_to_wear_contour(sequence: pr.PassSequence, roll_pass_label: str):
     for roll_pass in sequence.roll_passes:
         if roll_pass.label == roll_pass_label:
