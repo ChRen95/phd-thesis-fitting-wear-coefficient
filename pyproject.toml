@@ -13,13 +13,12 @@ dependencies = [
     "pyroll-freiberg-flow-stress",
     "pyroll-hensel-force-torque",
     "pyroll-pillar-model",
-    "pyroll-pillar-model-archard",
-    "pyroll-lendl-equivalent-method",
     "pyroll-neutral-point-estimator",
     "pyroll-sparling-spreading",
     "lmfit",
     "matplotlib",
-    "pandas"
+    "pandas",
+    "numdifftools"
 ]
 
 [dependency-groups]
