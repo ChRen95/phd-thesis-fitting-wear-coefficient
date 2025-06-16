@@ -17,7 +17,8 @@ dependencies = [
     "pyroll-sparling-spreading",
     "lmfit",
     "matplotlib",
-    "pandas"
+    "pandas",
+    "scikit-learn"
 ]
 
 [dependency-groups]
