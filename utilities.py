@@ -40,24 +40,29 @@ def extract_wear_contours_from_measurement(groove_name):
     root_dir = Path.cwd()
     wear_data_dir = root_dir / "wear_data" / groove_name
 
-    labels = []
-    tonnages = []
-    measured_wear_contours = []
+    measurements = []
 
     for file in wear_data_dir.iterdir():
-        with open(file, "r") as file:
-            data = json.load(file)
+        with open(file, "r") as f:
+            data = json.load(f)
+
+        labels = []
+        tonnages = []
+        measured_wear_contours = []
 
         for entry in data["wear_data"]:
             labels.append(entry["stand"])
             tonnages.append(entry["tonnage"])
             x_values = np.array([point["x"] * 1e-3 for point in entry["wear_contour"]])
             y_values = np.array([point["y"] * 1e-3 for point in entry["wear_contour"]])
-            x_values_shifted = x_values - max(x_values) / 2
-            measured_wear_contour = LineString(list(zip(x_values_shifted, y_values)))
-            measured_wear_contours.append(measured_wear_contour)
+            x_shifted = x_values - max(x_values) / 2
+            contour = LineString(list(zip(x_shifted, y_values)))
+            measured_wear_contours.append(contour)
 
-        return labels, tonnages, measured_wear_contours
+        measurement_id = file.stem
+        measurements.append((measurement_id, labels, tonnages, measured_wear_contours))
+
+    return measurements
 
 
 def calculate_area_between_contours(contour_1: LineString, contour_2: LineString):
@@ -113,7 +118,7 @@ def calculate_wear_contour_as_function(roll_pass: pr.RollPass, base_wear_coeffic
 
         return base_wear_coefficient * roll_gap_ratio ** roll_gap_ratio_coefficent
 
-    pillar_wear_depths = wear_coefficient * _pillar_deformation_resistance * _pillars_wear_length / (
+    pillar_wear_depths = wear_coefficient(base_wear_coefficient, roll_gap_ratio_coefficient) * _pillar_deformation_resistance * _pillars_wear_length / (
             3 * vickers_hardness_c15c)
     total_pillar_wear_depths = pillar_wear_depths * tonnage / roll_pass.in_profile.weight
     wear_depths_with_groove_contour = roll_pass.roll.groove.local_depth(
