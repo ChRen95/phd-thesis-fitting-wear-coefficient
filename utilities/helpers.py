@@ -27,10 +27,9 @@ def extract_wear_contours_from_measurement(groove_name):
         for entry in data["wear_data"]:
             labels.append(entry["stand"])
             tonnages.append(entry["tonnage"])
-            x_values = np.array([point["x"] * 1e-3 for point in entry["wear_contour"]])
-            y_values = np.array([point["y"] * 1e-3 for point in entry["wear_contour"]])
-            x_shifted = x_values - max(x_values) / 2
-            contour = LineString(list(zip(x_shifted, y_values)))
+            z_values = np.array([point["x"] for point in entry["wear_contour"]])
+            y_values = np.array([point["y"] for point in entry["wear_contour"]])
+            contour = LineString(list(zip(z_values, y_values)))
             measured_wear_contours.append(contour)
 
         measurement_id = file.stem
@@ -39,9 +38,10 @@ def extract_wear_contours_from_measurement(groove_name):
     return measurements
 
 
-def calculate_area_between_contours(contour_1: LineString, contour_2: LineString):
+def calculate_area_between_contours(contour_1: LineString, contour_2: LineString, debug: bool = False):
     z1, y1 = contour_1.xy
     z2, y2 = contour_2.xy
+
     z_min = max(min(z1), min(z2))
     z_max = min(max(z1), max(z2))
     z_common = np.linspace(z_min, z_max, 1000)
@@ -51,6 +51,13 @@ def calculate_area_between_contours(contour_1: LineString, contour_2: LineString
 
     y1_interp = f1(z_common)
     y2_interp = f2(z_common)
+
+    if debug:
+        fig, ax = plt.subplots()
+        ax.plot(z1, y1, label="Contour 1")
+        ax.plot(z2, y2, label="Contour 2")
+        ax.plot(z_common, y1_interp, label="Interpolated - C1 - Common")
+        ax.plot(z_common, y1_interp, label="Interpolated - C2 - Common")
 
     diff = np.abs(y1_interp - y2_interp)
     area = simpson(diff, z_common)
