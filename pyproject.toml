@@ -18,7 +18,8 @@ dependencies = [
     "lmfit",
     "matplotlib",
     "pandas",
-    "scikit-learn"
+    "scikit-learn",
+    "numdifftools"
 ]
 
 [dependency-groups]
