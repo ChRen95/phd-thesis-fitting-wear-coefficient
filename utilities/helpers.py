@@ -38,7 +38,7 @@ def extract_wear_contours_from_measurement(groove_name):
     return measurements
 
 
-def calculate_area_between_contours(contour_1: LineString, contour_2: LineString, debug: bool = False):
+def calculate_area_between_contours(contour_1: LineString, contour_2: LineString, debug: bool = False, debug_info: dict = None) -> float:
     z1, y1 = contour_1.xy
     z2, y2 = contour_2.xy
 
@@ -54,6 +54,8 @@ def calculate_area_between_contours(contour_1: LineString, contour_2: LineString
 
     if debug:
         fig, ax = plt.subplots()
+        title_string = "File: " + debug_info["measurement_id"] + "; Stand: " + debug_info["label"]
+        ax.set_title(title_string)
         ax.plot(z1, y1, label="Contour 1")
         ax.plot(z2, y2, label="Contour 2")
         ax.plot(z_common, y1_interp, label="Interpolated - C1 - Common")
