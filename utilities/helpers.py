@@ -56,11 +56,11 @@ def calculate_area_between_contours(contour_1: LineString, contour_2: LineString
         fig, ax = plt.subplots()
         title_string = "File: " + debug_info["measurement_id"] + "; Stand: " + debug_info["label"]
         ax.set_title(title_string)
-        ax.plot(z1, y1, label="Contour 1")
-        ax.plot(z2, y2, label="Contour 2")
+        ax.plot(z1, y1, label="Groove - Contour")
+        ax.plot(z2, y2, label="Wear - Contour")
         ax.plot(z_common, y1_interp, label="Interpolated - C1 - Common")
         ax.plot(z_common, y1_interp, label="Interpolated - C2 - Common")
-
+        ax.legend()
     diff = np.abs(y1_interp - y2_interp)
     area = simpson(diff, z_common)
 
