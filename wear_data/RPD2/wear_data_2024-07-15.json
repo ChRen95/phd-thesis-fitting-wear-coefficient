@@ -13831,7 +13831,7 @@
     {
       "date": "2024-07-15",
       "stand": "24-V",
-      "groove": "E10_7",
+      "groove": "E10.7",
       "material": "C15C",
       "shore_hardness": 95,
       "tonnage": 5165,
@@ -19117,7 +19117,7 @@
     {
       "date": "2024-07-15",
       "stand": "28-V",
-      "groove": "E8_5",
+      "groove": "E8.5",
       "material": "C15C",
       "shore_hardness": 95,
       "tonnage": 2413,

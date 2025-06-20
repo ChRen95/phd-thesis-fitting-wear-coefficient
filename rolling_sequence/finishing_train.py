@@ -20,7 +20,7 @@ def finishing_pass_design_1(roll_surface_temperature: float = 50 + 273.15, disk_
             ),
             velocity=17.1,
             gap=2.3e-3,
-            sparling_material_coefficient=0.9,
+            sparling_material_coefficient=0.8,
             disk_element_count=DISK_ELEMENT_COUNT
         ),
         pr.Transport(
@@ -42,7 +42,7 @@ def finishing_pass_design_1(roll_surface_temperature: float = 50 + 273.15, disk_
             ),
             velocity=22.2,
             gap=2.6e-3,
-            sparling_material_coefficient=0.9,
+            sparling_material_coefficient=0.8,
             disk_element_count=DISK_ELEMENT_COUNT
         ),
         pr.Transport(
@@ -138,7 +138,7 @@ def finishing_pass_design_1(roll_surface_temperature: float = 50 + 273.15, disk_
             ),
             velocity=30,
             gap=2.3e-3,
-            sparling_material_coefficient=0.8,
+            sparling_material_coefficient=0.75,
             disk_element_count=DISK_ELEMENT_COUNT
         ),
         pr.Transport(
@@ -160,7 +160,7 @@ def finishing_pass_design_1(roll_surface_temperature: float = 50 + 273.15, disk_
             ),
             velocity=37.8,
             gap=2.2e-3,
-            sparling_material_coefficient=0.9,
+            sparling_material_coefficient=0.8,
             disk_element_count=DISK_ELEMENT_COUNT
         ),
         pr.Transport(
@@ -181,7 +181,7 @@ def finishing_pass_design_1(roll_surface_temperature: float = 50 + 273.15, disk_
             ),
             velocity=51,
             gap=1.9e-3,
-            sparling_material_coefficient=0.9,
+            sparling_material_coefficient=0.8,
             disk_element_count=DISK_ELEMENT_COUNT
         ),
         pr.Transport(
@@ -203,7 +203,7 @@ def finishing_pass_design_1(roll_surface_temperature: float = 50 + 273.15, disk_
             ),
             velocity=65.4,
             gap=1.7e-3,
-            sparling_material_coefficient=0.9,
+            sparling_material_coefficient=0.8,
             disk_element_count=DISK_ELEMENT_COUNT
         ),
         pr.Transport(
@@ -287,7 +287,7 @@ def finishing_pass_design_1(roll_surface_temperature: float = 50 + 273.15, disk_
             ),
             velocity=81.7,
             gap=1.7e-3,
-            sparling_material_coefficient=0.9,
+            sparling_material_coefficient=0.8,
             disk_element_count=DISK_ELEMENT_COUNT
         ),
         pr.Transport(
@@ -310,7 +310,7 @@ def finishing_pass_design_1(roll_surface_temperature: float = 50 + 273.15, disk_
             ),
             velocity=107,
             gap=1.7e-3,
-            sparling_material_coefficient=0.75,
+            sparling_material_coefficient=0.8,
             disk_element_count=DISK_ELEMENT_COUNT
         )
 ])
@@ -335,7 +335,7 @@ def finishing_pass_design_2(roll_surface_temperature: float = 50 + 273.15, disk_
             ),
             velocity=17.1,
             gap=3.8e-3,
-            sparling_material_coefficient=0.9,
+            sparling_material_coefficient=0.8,
             disk_element_count=DISK_ELEMENT_COUNT
         ),
         pr.Transport(
@@ -347,7 +347,7 @@ def finishing_pass_design_2(roll_surface_temperature: float = 50 + 273.15, disk_
             orientation="v",
             roll=pr.Roll(
                 groove=pr.FalseRoundGroove(
-                    depth=8.7e-3,
+                    depth=8e-3,
                     r1=0.2e-3,
                     r2=8.5e-3,
                     flank_angle=60
@@ -357,7 +357,7 @@ def finishing_pass_design_2(roll_surface_temperature: float = 50 + 273.15, disk_
             ),
             velocity=22.2,
             gap=2.8e-3,
-            sparling_material_coefficient=0.9,
+            sparling_material_coefficient=0.8,
             disk_element_count=DISK_ELEMENT_COUNT
         ),
         pr.Transport(
@@ -475,7 +475,7 @@ def finishing_pass_design_2(roll_surface_temperature: float = 50 + 273.15, disk_
             ),
             velocity=37.8,
             gap=2.2e-3,
-            sparling_material_coefficient=0.9,
+            sparling_material_coefficient=0.8,
             disk_element_count=DISK_ELEMENT_COUNT
         ),
         pr.Transport(
@@ -496,7 +496,7 @@ def finishing_pass_design_2(roll_surface_temperature: float = 50 + 273.15, disk_
             ),
             velocity=51,
             gap=1.9e-3,
-            sparling_material_coefficient=0.9,
+            sparling_material_coefficient=0.7,
             disk_element_count=DISK_ELEMENT_COUNT
         ),
         pr.Transport(
@@ -518,7 +518,7 @@ def finishing_pass_design_2(roll_surface_temperature: float = 50 + 273.15, disk_
             ),
             velocity=65.4,
             gap=1.7e-3,
-            sparling_material_coefficient=0.9,
+            sparling_material_coefficient=0.7,
             disk_element_count=DISK_ELEMENT_COUNT
         ),
         pr.Transport(
@@ -602,7 +602,7 @@ def finishing_pass_design_2(roll_surface_temperature: float = 50 + 273.15, disk_
             ),
             velocity=81.7,
             gap=1.7e-3,
-            sparling_material_coefficient=0.9,
+            sparling_material_coefficient=0.8,
             disk_element_count=DISK_ELEMENT_COUNT
         ),
         pr.Transport(
@@ -625,7 +625,7 @@ def finishing_pass_design_2(roll_surface_temperature: float = 50 + 273.15, disk_
             ),
             velocity=107,
             gap=1.7e-3,
-            sparling_material_coefficient=0.75,
+            sparling_material_coefficient=0.8,
             disk_element_count=DISK_ELEMENT_COUNT
         )
 ])
@@ -650,7 +650,7 @@ def finishing_pass_design_3(roll_surface_temperature: float = 50 + 273.15, disk_
             ),
             velocity=17.1,
             gap=2.6e-3,
-            sparling_material_coefficient=0.9,
+            sparling_material_coefficient=0.8,
             disk_element_count=DISK_ELEMENT_COUNT
         ),
         pr.Transport(
@@ -672,7 +672,7 @@ def finishing_pass_design_3(roll_surface_temperature: float = 50 + 273.15, disk_
             ),
             velocity=22.2,
             gap=2.6e-3,
-            sparling_material_coefficient=0.9,
+            sparling_material_coefficient=0.8,
             disk_element_count=DISK_ELEMENT_COUNT
         ),
         pr.Transport(
@@ -790,7 +790,7 @@ def finishing_pass_design_3(roll_surface_temperature: float = 50 + 273.15, disk_
             ),
             velocity=37.8,
             gap=2.2e-3,
-            sparling_material_coefficient=0.9,
+            sparling_material_coefficient=0.8,
             disk_element_count=DISK_ELEMENT_COUNT
         ),
         pr.Transport(
@@ -811,7 +811,7 @@ def finishing_pass_design_3(roll_surface_temperature: float = 50 + 273.15, disk_
             ),
             velocity=51,
             gap=1.9e-3,
-            sparling_material_coefficient=0.9,
+            sparling_material_coefficient=0.7,
             disk_element_count=DISK_ELEMENT_COUNT
         ),
         pr.Transport(
@@ -833,7 +833,7 @@ def finishing_pass_design_3(roll_surface_temperature: float = 50 + 273.15, disk_
             ),
             velocity=65.4,
             gap=1.7e-3,
-            sparling_material_coefficient=0.9,
+            sparling_material_coefficient=0.7,
             disk_element_count=DISK_ELEMENT_COUNT
         ),
         pr.Transport(
@@ -917,7 +917,7 @@ def finishing_pass_design_3(roll_surface_temperature: float = 50 + 273.15, disk_
             ),
             velocity=81.7,
             gap=1.7e-3,
-            sparling_material_coefficient=0.9,
+            sparling_material_coefficient=0.8,
             disk_element_count=DISK_ELEMENT_COUNT
         ),
         pr.Transport(
@@ -940,7 +940,7 @@ def finishing_pass_design_3(roll_surface_temperature: float = 50 + 273.15, disk_
             ),
             velocity=107,
             gap=1.7e-3,
-            sparling_material_coefficient=0.75,
+            sparling_material_coefficient=0.8,
             disk_element_count=DISK_ELEMENT_COUNT
         )
 ])

@@ -7,12 +7,17 @@ filepath = pathlib.Path.cwd()
 
 density = pd.read_csv(filepath / "in_profile" / "bst500_density.csv").density
 density_temperature = pd.read_csv(filepath / "in_profile" / "bst500_density.csv").kelvin_temperature
-specific_heat_capacity_real = pd.read_csv(filepath / "in_profile" / "bst500_specific_heat_capacity_real_measurement.csv").specific_heat_capacity * 1000
-specific_heat_capacity_temperature_real = pd.read_csv(filepath / "in_profile" / "bst500_specific_heat_capacity_real_measurement.csv").celsius_temperature + 273.15
-specific_heat_capacity = pd.read_csv(filepath / "in_profile" / "bst500_specific_heat_capacity.csv").specific_heat_capacity * 1000
-specific_heat_capacity_temperature = pd.read_csv(filepath / "in_profile" / "bst500_specific_heat_capacity.csv").celsius_temperature + 273.15
+specific_heat_capacity_real = pd.read_csv(
+    filepath / "in_profile" / "bst500_specific_heat_capacity_real_measurement.csv").specific_heat_capacity * 1000
+specific_heat_capacity_temperature_real = pd.read_csv(
+    filepath / "in_profile" / "bst500_specific_heat_capacity_real_measurement.csv").celsius_temperature + 273.15
+specific_heat_capacity = pd.read_csv(
+    filepath / "in_profile" / "bst500_specific_heat_capacity.csv").specific_heat_capacity * 1000
+specific_heat_capacity_temperature = pd.read_csv(
+    filepath / "in_profile" / "bst500_specific_heat_capacity.csv").celsius_temperature + 273.15
 thermal_conductivity = pd.read_csv(filepath / "in_profile" / "bst500_thermal_conductivity.csv").thermal_conductivity
-thermal_conductivity_temperature = pd.read_csv(filepath / "in_profile" / "bst500_thermal_conductivity.csv").celsius_temperature + 273.15
+thermal_conductivity_temperature = pd.read_csv(
+    filepath / "in_profile" / "bst500_thermal_conductivity.csv").celsius_temperature + 273.15
 
 density_function = interp1d(density_temperature, density)
 specific_heat_capacity_function = interp1d(specific_heat_capacity_temperature, specific_heat_capacity)
@@ -39,6 +44,25 @@ def create_in_profile_from_surface_temperature(temperature: float) -> pr.Profile
         height=160e-3,
         width=160e-3,
         corner_radius=3e-3,
+        temperature=temperature,
+        strain=0,
+        weight=2400,
+        length=12,
+        material=["BST500", "steel"]
+    )
+    return in_profile
+
+
+def create_in_profile_for_finishing_train(temperature: float) -> pr.Profile:
+    in_profile = pr.Profile.from_groove(groove=
+    pr.FalseRoundGroove(
+        depth=10.25e-3,
+        r1=2.5e-3,
+        r2=12e-3,
+        flank_angle=60
+    ),
+        gap=3.5e-3,
+        filling=0.9,
         temperature=temperature,
         strain=0,
         weight=2400,

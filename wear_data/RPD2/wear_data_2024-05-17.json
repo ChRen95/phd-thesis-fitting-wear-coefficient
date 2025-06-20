@@ -3,7 +3,7 @@
     {
       "date": "2024-05-17",
       "stand": "24-V",
-      "groove": "E107",
+      "groove": "E10.7",
       "material": "C15C",
       "shore_hardness": 95,
       "tonnage": 5921,
@@ -5288,7 +5288,7 @@
     },
     {
       "date": "2024-05-17",
-      "stand": "21-V",
+      "stand": "21-H",
       "groove": "OV8",
       "material": "C15C",
       "shore_hardness": 95,
@@ -14018,7 +14018,7 @@
     },
     {
       "date": "2024-05-17",
-      "stand": "18-H",
+      "stand": "18-V",
       "groove": "R15",
       "material": "C15C",
       "shore_hardness": 95,
@@ -23296,7 +23296,7 @@
     },
     {
       "date": "2024-05-17",
-      "stand": "27-V",
+      "stand": "27-H",
       "groove": "OV16",
       "material": "C15C",
       "shore_hardness": 95,
@@ -28394,7 +28394,7 @@
     },
     {
       "date": "2024-05-17",
-      "stand": "22-H",
+      "stand": "22-V",
       "groove": "R12",
       "material": "C15C",
       "shore_hardness": 95,
@@ -42922,8 +42922,8 @@
     },
     {
       "date": "2024-05-17",
-      "stand": "28-H",
-      "groove": "E85",
+      "stand": "28-V",
+      "groove": "E8.5",
       "material": "C15C",
       "shore_hardness": 95,
       "tonnage": 2960,
