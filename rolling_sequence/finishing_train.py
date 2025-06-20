@@ -956,7 +956,7 @@ def finishing_pass_design_4(roll_surface_temperature: float = 50 + 273.15, disk_
             orientation="h",
             roll=pr.Roll(
                 groove=pr.CircularOvalGroove(
-                    depth=5.7e-3,
+                    depth=4.7e-3,
                     r1=1e-3,
                     r2=23e-3,
                 ),
