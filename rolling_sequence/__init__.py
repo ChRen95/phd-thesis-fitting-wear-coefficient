@@ -2,7 +2,7 @@ import pyroll.core as pr
 
 from .roughing_train import roughing_sequence
 from .intermediate_train import intermediate_sequence
-from .finishing_train import finishing_pass_design_1, finishing_pass_design_2, finishing_pass_design_3
+from .finishing_train import finishing_pass_design_1, finishing_pass_design_2, finishing_pass_design_3, finishing_pass_design_4
 
 
 def rolling_train_rpd1(roll_surface_temperature: float, disk_element_count: int):

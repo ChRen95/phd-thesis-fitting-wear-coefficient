@@ -10,6 +10,7 @@ from scipy.integrate import simpson
 
 from .roll_pass import pillar_wear_depths
 
+
 def extract_wear_contours_from_measurement(groove_name):
     root_dir = Path.cwd()
     wear_data_dir = root_dir / "wear_data" / groove_name
@@ -38,7 +39,8 @@ def extract_wear_contours_from_measurement(groove_name):
     return measurements
 
 
-def calculate_area_between_contours(contour_1: LineString, contour_2: LineString, debug: bool = False, debug_info: dict = None) -> float:
+def calculate_area_between_contours(contour_1: LineString, contour_2: LineString, debug: bool = False,
+                                    debug_info: dict = None) -> float:
     z1, y1 = contour_1.xy
     z2, y2 = contour_2.xy
 
@@ -74,8 +76,9 @@ def root_mean_square_value(error_array: np.array) -> float:
 
 
 def calculate_wear_contour(roll_pass: pr.RollPass, wear_coefficient: float, tonnage: float):
-
-    calculated_wear_contour = pillar_wear_depths(roll_pass, wear_coefficient, tonnage) + roll_pass.roll.groove.local_depth(roll_pass.out_profile.pillars)
+    calculated_wear_contour = pillar_wear_depths(roll_pass, wear_coefficient,
+                                                 tonnage) + roll_pass.roll.groove.local_depth(
+        roll_pass.out_profile.pillars)
 
     right_side = list(zip(roll_pass.out_profile.pillars, calculated_wear_contour))
     left_side = list(zip(-roll_pass.out_profile.pillars[::-1], calculated_wear_contour[::-1]))
@@ -83,6 +86,7 @@ def calculate_wear_contour(roll_pass: pr.RollPass, wear_coefficient: float, tonn
     wear_contour = LineString(combined_contour_list)
 
     return wear_contour
+
 
 def compare_groove_contour_to_wear_contour(sequence: pr.PassSequence, roll_pass_label: str):
     for roll_pass in sequence.roll_passes:
@@ -109,3 +113,4 @@ def compare_groove_contour_to_wear_contour(sequence: pr.PassSequence, roll_pass_
     ax.grid(True)
 
     return np.array(areas_between_contours)
+
