@@ -956,7 +956,7 @@ def finishing_pass_design_4(roll_surface_temperature: float = 50 + 273.15, disk_
             orientation="h",
             roll=pr.Roll(
                 groove=pr.CircularOvalGroove(
-                    depth=4.7e-3,
+                    depth=5.7e-3,
                     r1=1e-3,
                     r2=23e-3,
                 ),
@@ -979,7 +979,7 @@ def finishing_pass_design_4(roll_surface_temperature: float = 50 + 273.15, disk_
                 groove=pr.FalseRoundGroove(
                     depth=8e-3,
                     r1=0.2e-3,
-                    r2=9.53e-3,
+                    r2=8.5e-3,
                     flank_angle=60
                 ),
                 nominal_radius=104e-3,
