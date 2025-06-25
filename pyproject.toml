@@ -18,6 +18,7 @@ dependencies = [
     "lmfit",
     "matplotlib",
     "pandas",
+    "scikit-learn",
     "numdifftools"
 ]
 
