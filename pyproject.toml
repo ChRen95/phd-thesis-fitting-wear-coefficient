@@ -15,6 +15,7 @@ dependencies = [
     "pyroll-pillar-model",
     "pyroll-neutral-point-estimator",
     "pyroll-sparling-spreading",
+    "pyroll-stationary-thermal-analysis-work-roll",
     "lmfit",
     "matplotlib",
     "pandas",
