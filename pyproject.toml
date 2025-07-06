@@ -18,6 +18,7 @@ dependencies = [
     "pyroll-stationary-thermal-analysis-work-roll",
     "lmfit",
     "matplotlib",
+    "scienceplots",
     "pandas",
     "scikit-learn",
     "numdifftools"
