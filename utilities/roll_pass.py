@@ -39,24 +39,3 @@ def pillar_wear_depths(roll_pass: pr.RollPass, wear_coefficient: float, tonnage)
     return wear_coefficient * _pillar_deformation_resistance * _pillars_wear_length / (
             3 * VICKERS_HARDNESS_C15C) * tonnage / roll_pass.in_profile.weight
 
-
-def check_roll_pass_via_plot(roll_pass: pr.RollPass):
-    fig, ax = plt.subplots(nrows=1, ncols=2)
-    p_flow_stress = flow_stress(roll_pass.out_profile.freiberg_flow_stress_coefficients,
-                                roll_pass.total_pillar_strains,
-                                roll_pass.total_pillar_strain_rates,
-                                roll_pass.out_profile.temperature)
-
-    p_deformation_resistance = pillar_deformation_resistance(roll_pass)
-    ax[0].grid()
-    ax[0].set_title(roll_pass.label)
-    ax[0].fill(*roll_pass.in_profile.cross_section.boundary.xy)
-    ax[0].fill(*roll_pass.out_profile.cross_section.boundary.xy)
-    ax[0].set_aspect('equal')
-    for cl in roll_pass.contour_lines.geoms:
-        ax[0].plot(*cl.xy, color='black')
-
-    ax[1].plot(roll_pass.out_profile.pillars, p_deformation_resistance, color='C0')
-    ax[1].plot(-roll_pass.out_profile.pillars, p_deformation_resistance, color='C0')
-    ax[1].plot(roll_pass.out_profile.pillars, p_flow_stress, color='C1')
-    ax[1].plot(-roll_pass.out_profile.pillars, p_flow_stress, color='C1')
